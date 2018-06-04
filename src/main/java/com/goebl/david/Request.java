@@ -230,7 +230,7 @@ public class Request {
      * @return <code>this</code> for method chaining (fluent API)
      */
     public Request body(Object body) {
-        if (method == Method.GET || method == Method.DELETE) {
+        if (method == Method.GET) {
             throw new IllegalStateException("body not allowed for request method " + method);
         }
         this.payload = body;
