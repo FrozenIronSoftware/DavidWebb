@@ -28,7 +28,7 @@ public class TestWebb_Ssl extends AbstractTestWebb {
         webb.setBaseUri(null);
 
         try {
-            webb.get("https://tv.eurosport.com/").ensureSuccess().asString();
+            webb.get("https://localhost:3003/").ensureSuccess().asString();
             fail();
         } catch (WebbException e) {
             Class expected = isAndroid() ? IOException.class : SSLHandshakeException.class;
