@@ -353,7 +353,7 @@ public class Webb {
                 WebbUtils.ensureRequestProperty(connection, HDR_ACCEPT, APP_JSON);
             }
 
-            if (request.method != Request.Method.GET && request.method != Request.Method.DELETE) {
+            if (request.method != Request.Method.GET) {
                 if (request.streamPayload) {
                     WebbUtils.setContentTypeAndLengthForStreaming(connection, request, request.compress);
                     connection.setDoOutput(true);

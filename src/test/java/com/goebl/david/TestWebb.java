@@ -131,9 +131,13 @@ public class TestWebb extends AbstractTestWebb {
     }
 
     public void testSimpleDelete() throws Exception {
+        JSONObject payload = new JSONObject();
+        payload.put("p1", SIMPLE_ASCII);
+        payload.put("p2", COMPLEX_UTF8);
 
         Response<Void> response = webb
                 .delete("/simple")
+                .body(payload)
                 .asVoid();
 
         assertEquals(204, response.getStatusCode());
