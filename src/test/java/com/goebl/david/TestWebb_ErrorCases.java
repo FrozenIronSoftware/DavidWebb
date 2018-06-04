@@ -13,15 +13,6 @@ public class TestWebb_ErrorCases extends AbstractTestWebb {
         }
     }
 
-    public void testDeleteWithBody() throws Exception {
-        try {
-            webb.delete("/does_not_exist").body("some text").asVoid();
-            fail();
-        } catch (IllegalStateException expected) {
-            // body with get is not allowed
-        }
-    }
-
     public void testUriNull() throws Exception {
         try {
             webb.get(null).asVoid();
